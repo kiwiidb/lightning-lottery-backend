@@ -23,3 +23,18 @@ Delete all participants from the main database.
 Buy voucher from BitRefill
 Store voucher code in database with reference to winner.
 E-mail the winner his code.
+
+# Participant submission
+For participant entering, the server should listen for a POST request on "/submit" which looks like:
+
+{
+    "e-mail": "someone@example.com",
+    "voucher": "{steam},{amazon}" //type of voucher the participant wants to win
+}
+
+server will respond with the following response:
+
+{
+    "invoice": "lightning invoice",
+    "paid": "false"
+}
